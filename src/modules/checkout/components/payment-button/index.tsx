@@ -50,6 +50,8 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({
       return (
         <ManualTestPaymentButton notReady={notReady} data-testid={dataTestId} />
       )
+    case "pix":
+      return <button>PIX</button>
     case "paypal":
       return (
         <PayPalPaymentButton
@@ -275,7 +277,7 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
         size="large"
         data-testid="submit-order-button"
       >
-        Place order
+        Finalizar pedido
       </Button>
       <ErrorMessage
         error={errorMessage}

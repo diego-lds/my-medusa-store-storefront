@@ -2,7 +2,7 @@
 
 import { Region } from "@medusajs/medusa"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
-import { Button } from "@medusajs/ui"
+import { Button, Heading } from "@medusajs/ui"
 import { isEqual } from "lodash"
 import { useParams } from "next/navigation"
 import { useEffect, useMemo, useRef, useState } from "react"
@@ -137,6 +137,12 @@ export default function ProductActions({
 
   return (
     <>
+      <div>
+        <Heading className="text-3xl" level={"h1"}>
+          {product.title}
+        </Heading>
+        <Heading level={"h2"}>{product.description}</Heading>
+      </div>
       <div className="flex flex-col gap-y-2" ref={actionsRef}>
         <div>
           {product.variants.length > 1 && (
@@ -171,10 +177,10 @@ export default function ProductActions({
           data-testid="add-product-button"
         >
           {!variant
-            ? "Select variant"
+            ? "Selecão variante"
             : !inStock
             ? "Out of stock"
-            : "Add to cart"}
+            : "Adicione ao carrinho"}
         </Button>
         <MobileActions
           product={product}
