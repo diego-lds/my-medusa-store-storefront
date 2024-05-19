@@ -381,7 +381,7 @@ export const getRegion = cache(async function (countryCode: string) {
 
     const region = countryCode
       ? regionMap.get(countryCode)
-      : regionMap.get("us")
+      : regionMap.get("br")
 
     return region
   } catch (e: any) {
