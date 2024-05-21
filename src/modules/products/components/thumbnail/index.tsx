@@ -11,7 +11,7 @@ type ThumbnailProps = {
   size?: "small" | "medium" | "large" | "full" | "square"
   isFeatured?: boolean
   className?: string
-  'data-testid'?: string
+  "data-testid"?: string
 }
 
 const Thumbnail: React.FC<ThumbnailProps> = ({
@@ -20,7 +20,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   size = "small",
   isFeatured,
   className,
-  'data-testid': dataTestid
+  "data-testid": dataTestid,
 }) => {
   const initialImage = thumbnail || images?.[0]?.url
 
@@ -52,6 +52,7 @@ const ImageOrPlaceholder = ({
 }: Pick<ThumbnailProps, "size"> & { image?: string }) => {
   return image ? (
     <Image
+      priority={true}
       src={image}
       alt="Thumbnail"
       className="absolute inset-0 object-cover object-center"
